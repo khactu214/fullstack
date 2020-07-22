@@ -104,18 +104,18 @@ var AddProduct = Vue.extend({
     },
     methods: {
         createProduct() {
-            productService.create(this.product, r => router.push(''))
+            productService.create(this.product, r => router.push('/'))
         }
     }
 });
 
 var router = new VueRouter({
-    router: [
-        {path: '/', compoment: List },
-        {path: '/product/:product_id', compoment: Product, name: 'product'},
-        {path: '/add-product', compoment: AddProduct},
-        {path: '/product/:product_id/edit', compoment: ProductEdit, name: 'product-edit'},
-        {path: '/product/:product_id/delete', compoment: ProductDelete, name: 'product-delete'}
+    routes: [
+        {path: '/', component: List },
+        {path: '/product/:product_id', component: Product, name: 'product'},
+        {path: '/add-product', component: AddProduct},
+        {path: '/product/:product_id/edit', component: ProductEdit, name: 'product-edit'},
+        {path: '/product/:product_id/delete', component: ProductDelete, name: 'product-delete'}
     ]
 });
 
